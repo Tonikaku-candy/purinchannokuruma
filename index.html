@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loop</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="purinchan">
+        <img src="image/purincar.PNG" alt="purinchan" />
+      </div>
+    </div>
+    <button>Stop</button>
+
+    <audio controls>
+      <source src="music/purin'scar.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="lyrics">
+      <h1>🎵 Purinchan's Car 🎵</h1>
+
+      <p>Purinchan’s car, Purinchan’s car</p>
+      <p>Purinchan bought pudding from the store</p>
+
+      <p>Purinchan’s car, Purinchan’s car</p>
+      <p>Purinchan turned it into a car on his own</p>
+
+      <p>Soft, sweet, and bouncy too, smells so good.</p>
+      <p>That’s Purinchan’s car, but you know…</p>
+
+      <p>Crash and it’s over, the car will break apart</p>
+      <p>Crash and it’s over, crumbling without a sound</p>
+      <p>Crash and it’s over, I wanted to eat it too</p>
+      <p>So fragile, there’s no insurance on this car</p>
+    </div>
+
+    <script>
+      let position = 0;
+      let isPlaying = true;
+      let purincar = document.querySelector('.purinchan img');
+      let w = window.innerWidth;
+      let playAnimation = setInterval(movePurin, 50);
+
+      let btn = document.querySelector('button');
+
+      btn.addEventListener('click', playPause);
+
+      function playPause() {
+        if (isPlaying == true) {
+          isPlaying = false;
+          clearInterval(playAnimation);
+          btn.innerHTML = 'Go';
+        } else {
+          playAnimation = setInterval(movePurin, 50);
+          isPlaying = true;
+          btn.innerHTML = 'Stop';
+        }
+      }
+
+      function movePurin() {
+        if (position < w) {
+          position += 15;
+          purincar.style.right = position + 'px';
+        } else {
+          position = 0;
+          position += 15;
+        }
+      }
+    </script>
+  </body>
+</html>
