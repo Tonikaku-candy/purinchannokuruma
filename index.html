@@ -8,9 +8,9 @@
   </head>
   <body>
     <div class="container">
-      <div class="purinchan">
-        <img src="image/purincar.PNG" alt="purinchan" />
-      </div>
+      <!-- <div class="purinchan"> -->
+      <img src="image/purincar.PNG" alt="purinchan" />
+      <!-- </div> -->
     </div>
     <button>Stop</button>
 
@@ -40,7 +40,7 @@
     <script>
       let position = 0;
       let isPlaying = true;
-      let purincar = document.querySelector('.purinchan img');
+      let purincar = document.querySelector('img');
       let w = window.innerWidth;
       let playAnimation = setInterval(movePurin, 50);
 
@@ -65,7 +65,7 @@
           position += 15;
           purincar.style.right = position + 'px';
         } else {
-          position = 0;
+          position = -200;
           position += 15;
         }
       }
